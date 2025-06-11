@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\homeController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('home/',[Controller::class,'home']);
+Route::get('home/',[homeController::class,'home']);

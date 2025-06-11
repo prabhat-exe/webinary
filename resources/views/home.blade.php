@@ -3,17 +3,16 @@
 @section('title', 'Home Page')
 
 @section('content')
-    <div style="height: 3000px; ">
+<div style="height: 3000px; ">
 
 
-        <div style="position: relative; width: 100%; text-align: center;">
-            <!-- Background Image -->
-            <img src="{{ asset('images/bg1.jpg') }}" alt="Background"
-                style="height: 595px; width: 100%; display: block; object-fit: cover;">
+    <div style="position: relative; width: 100%; text-align: center;">
+        <!-- Background Image -->
+        <img src="{{ asset('images/bg1.jpg') }}" alt="Background"
+            style="height: 595px; width: 100%; display: block; object-fit: cover;">
 
-            <!-- Overlay Container (Split into left and right) -->
-            <div
-                style="
+        <!-- Overlay Container (Split into left and right) -->
+        <div style="
                             position: absolute;
                             top: 50%;
                             left: 50%;
@@ -29,12 +28,11 @@
                             gap: 40px;
                         ">
 
-                <!-- Left Side (Text) -->
-                <div style="flex: 1; text-align: left;">
-                    <h1  class="fade-up" style="font-size: 32px; margin-bottom: 20px;">Welcome to Our Tech World</h1>
-                    <div>
-                    <p 
-                        style="
+            <!-- Left Side (Text) -->
+            <div style="flex: 1; text-align: left;">
+                <h1 class="fade-up" style="font-size: 32px; margin-bottom: 20px;">Welcome to Our Tech World</h1>
+                <div>
+                    <p style="
                                 font-size: 18px;
                                 line-height: 1.6;
                                 opacity: 0;
@@ -47,11 +45,10 @@
                         Explore how we bring innovation to your fingertips with expert solutions.
                     </p>
                 </div>
-                </div>
+            </div>
 
-                <!-- Right Side (Icons) -->
-                <div
-                    style="     display: grid;
+            <!-- Right Side (Icons) -->
+            <div style="     display: grid;
                                 grid-template-areas:
                                     '. top .'
                                     'left center right'
@@ -63,34 +60,33 @@
                                 margin: auto;
                             ">
 
-                    <img src="{{ asset('svgs/ai_icon.svg') }}" alt="AI Icon"
-                        style="grid-area: top; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
+                <img src="{{ asset('svgs/ai_icon.svg') }}" alt="AI Icon"
+                    style="grid-area: top; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
 
-                    <img src="{{ asset('svgs/claud_icone.svg') }}" alt="Cloud Icon"
-                        style="grid-area: left; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
+                <img src="{{ asset('svgs/claud_icone.svg') }}" alt="Cloud Icon"
+                    style="grid-area: left; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
 
-                    <img src="{{ asset('svgs/enginner_icon.svg') }}" alt="Engineer Icon"
-                        style="grid-area: center; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
+                <img src="{{ asset('svgs/enginner_icon.svg') }}" alt="Engineer Icon"
+                    style="grid-area: center; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
 
-                    <img src="{{ asset('svgs/mobile_icon.svg') }}" alt="Mobile Icon"
-                        style="grid-area: right; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
+                <img src="{{ asset('svgs/mobile_icon.svg') }}" alt="Mobile Icon"
+                    style="grid-area: right; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
 
-                    <img src="{{ asset('svgs/ai_icon.svg') }}" alt="AI Icon Again (bottom)"
-                        style="grid-area: bottom; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
-                </div>
-
+                <img src="{{ asset('svgs/ai_icon.svg') }}" alt="AI Icon Again (bottom)"
+                    style="grid-area: bottom; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
             </div>
 
         </div>
 
+    </div>
 
 
+    {{-- part2 --}}
 
-        <div style="position: relative; width: 100%; text-align: center; height: 595px;">
+    <div style="position: relative; width: 100%; text-align: center; height: 595px;">
 
-            <!-- Gradient Background -->
-            <div
-                style="
+        <!-- Gradient Background -->
+        <div style="
             position: absolute;
             top: 0;
             left: 0;
@@ -99,11 +95,10 @@
             background: linear-gradient(135deg, #1e3c72, #2a5298); /* You can change these colors */
             z-index: 0;
         ">
-            </div>
+        </div>
 
-            <!-- Overlay Container (Split into left and right) -->
-            <div
-                style="
+        <!-- Overlay Container (Split into left and right) -->
+        <div style="
             position: absolute;
             top: 50%;
             left: 50%;
@@ -120,35 +115,145 @@
             z-index: 1;
         ">
 
-                <!-- Left Side (Text) -->
-                <div style="flex: 1; text-align: left;">
-                    <h1 class="fade-up" style="font-size: 32px; margin-bottom: 20px;">About Us</h1>
+            <!-- Left Side (Text) -->
+            <div style="flex: 1; text-align: left;">
+                <h1 class="fade-up" style="font-size: 32px; margin-bottom: 20px;">About Us</h1>
 
-                    <p class="fade-up" style="font-size: 18px; line-height: 1.6;">
-                        <strong>WEBINARY</strong><br />
-                        At Webinary, we are passionate about shaping the future through technology. Our expertise spans
-                        across
-                        <strong>Artificial Intelligence</strong>, <strong>Cloud Computing</strong>, <strong>Engineering
-                            Solutions</strong>, and
-                        <strong>Mobile Development</strong>.
-                        <br /><br />
-                        We deliver cutting-edge solutions designed to transform businesses, empower innovation, and drive
-                        digital growth.
-                        Whether you're looking to harness the power of AI, build scalable cloud systems, engineer complex
-                        systems, or create powerful mobile experiences — we’ve got you covered.
-                    </p>
-                </div>
+                <p class="fade-up" style="font-size: 18px; line-height: 1.6;">
+                    <strong>WEBINARY</strong><br />
+                    At Webinary, we are passionate about shaping the future through technology. Our expertise spans
+                    across
+                    <strong>Artificial Intelligence</strong>, <strong>Cloud Computing</strong>, <strong>Engineering
+                        Solutions</strong>, and
+                    <strong>Mobile Development</strong>.
+                    <br /><br />
+                    We deliver cutting-edge solutions designed to transform businesses, empower innovation, and drive
+                    digital growth.
+                    Whether you're looking to harness the power of AI, build scalable cloud systems, engineer complex
+                    systems, or create powerful mobile experiences — we’ve got you covered.
+                </p>
+            </div>
 
-                <!-- Right Side (Image) -->
-                <div style="display: flex; justify-content: center; align-items: center;">
-                    <img src="{{ asset('images/tech_team.jpg') }}" alt="Tech Team"
-                        style="height: 300px; border-radius: 12px;">
-                </div>
+            <!-- Right Side (Image) -->
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <img src="{{ asset('images/tech_team.jpg') }}" alt="Tech Team"
+                    style="height: 300px; border-radius: 12px;">
             </div>
         </div>
-
-
     </div>
+
+    {{-- part3 --}}
+
+    <div style="position: relative; width: 100%; text-align: center; height: 595px;">
+
+        <!-- Gradient Background -->
+        <div style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+             background: linear-gradient(135deg, #667eea, #764ba2); /* You can change these colors */
+            z-index: 0;
+        ">
+        </div>
+
+        <!-- Overlay Container (Split into left and right) -->
+        <div style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 20px;
+            color: white;
+            gap: 40px;
+            z-index: 1;
+        ">
+            <!-- Left Side (Text) -->
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <div class="custom-scrollbar"
+                    style="max-height: 300px; overflow-y: auto; padding: 10px; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; width: 300px; background-color: rgba(0, 0, 0, 0.5);">
+                    <ul style="list-style: none; padding: 0; margin: 0; color: #fff;">
+                        @foreach ($services as $name)
+                        <li style="padding: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                            {{ $name }}
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- Right Side (Image) -->
+            <div style="flex: 1; text-align: left;">
+                <h1 class="fade-up" style="font-size: 32px; margin-bottom: 20px;">Services</h1>
+
+                <p class="fade-up" style="font-size: 18px; line-height: 1.6;">
+                    <strong>OUR SERVICES</strong><br />
+                    At Webinary, we offer a range of cutting-edge technology solutions tailored to meet modern business
+                    needs. Our core services include:
+                    <br /><br />
+
+
+                    Partner with Webinary to bring innovation, efficiency, and scalability to your digital journey.
+
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+
+    {{-- page-4 --}}
+
+    <div style="position: relative; width: 100%; text-align: center;">
+        <!-- Background Image -->
+        <img src="{{ asset('images/workflow_management.jpg') }}" alt="Background"
+            style="height: 595px; width: 100%; display: block;">
+
+        <!-- Top-Left Overlay Box -->
+        <div style="
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: left;
+                    width: 10%;
+                    padding: 30px;
+                    border-radius: 20px;
+                    color: white;
+                    gap: 40px;
+                    z-index: 1;
+                ">
+            <h1 class="fade-up" style="font-size: 32px; margin-bottom: 20px;">Planning</h1>
+            <p class="fade-up" style="font-size: 12px;margin-top: 190px; margin-left: 45px; color: black;">Client
+                Consultation</p>
+            <p class="fade-up" style="font-size: 12px;margin-top: 20px; margin-left: 22px; color: black;">
+                Solution Architecture</p>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
 
 @endsection
 

@@ -29,6 +29,31 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Custom white line scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        /* Optional: smooth scroll on hover */
+        .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+        }
+
+        /* Firefox support */
+        .custom-scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: white transparent;
+        }
     </style>
 
 
@@ -58,7 +83,7 @@
 
 
 
-@yield('script')
+    @yield('script')
 
 </body>
 
