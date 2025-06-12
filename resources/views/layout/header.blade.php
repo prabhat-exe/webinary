@@ -134,6 +134,15 @@
             transform: translate(0, -50%);
         }
 
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.5);
+            /* Light border */
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
         /* ===== Responsive Scaling ===== */
         @media (max-width: 992px) {
             .plus-icon-container {
@@ -160,6 +169,56 @@
                 padding: 0.5rem;
             }
         }
+
+
+        @media (max-width: 576px) {
+            .content-box {
+                padding: 1rem !important;
+                max-width: 90% !important;
+                font-size: 0.9rem;
+            }
+
+            .content-box h1 {
+                font-size: 1.25rem !important;
+            }
+
+            .content-box p {
+                font-size: 0.85rem !important;
+            }
+
+            .custom-scrollbar {
+                max-width: 100% !important;
+            }
+        }
+
+        .scrollable-area::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scrollable-area::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        /* Fade transition duration shortened to 0.5s */
+        .carousel-fade .carousel-item {
+            transition: opacity 1s ease-in-out;
+        }
+
+        {{-- .pagination .page-item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pagination .page-item .dot {
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination .page-item:hover .dot {
+            background-color: white !important;
+            opacity: 0.7;
+        } --}}
     </style>
 </head>
 
@@ -174,11 +233,13 @@
             </a>
 
             <!-- Hamburger button -->
+            <!-- Hamburger button -->
             <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
 
             <!-- Navbar links -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
