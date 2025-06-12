@@ -1,281 +1,177 @@
 @extends('layout.header')
-
 @section('title', 'Home Page')
 
+
+
 @section('content')
-<div style="height: 3000px; ">
+    <div class="" style="height:2000px;">
+        <!-- Hero Section -->
+        <section class="hero-section position-relative m-0 p-0" style="min-height: 100vh; overflow: hidden;">
+            <!-- Background Image -->
+            <img src="{{ asset('images/bg1.jpg') }}" class="position-absolute top-0 start-0 w-100 h-100"
+                style="object-fit: cover; z-index: -1;" alt="Background" />
+
+            <!-- Foreground Content -->
+            <div class="position-absolute top-50 start-50 translate-middle w-100 px-3 text-white ">
+                <div class="bg-dark bg-opacity-50 rounded-4 w-75 w-md-75 mx-auto p-4 about-scroll">
+                    <div class="row g-4 align-items-center">
+                        <!-- Left Text -->
+                        <div class="col-12 col-md-6 text-start d-flex flex-column justify-content-center ">
+                            <h1 class="fs-3 mb-3 fade-up">Welcome to WEBINARY</h1>
+                            <p class="fs-6 lh-lg fade-up " style="animation: floatUp 1s ease-out forwards">
+
+                                We specialize in AI, Cloud Computing, Engineering Solutions, and Mobile Development.
+                                Explore how we bring innovation to your fingertips with expert solutions.
+
+                                We specialize in AI, Cloud Computing, Engineering Solutions, and Mobile Development.
+                                Explore how we bring innovation to your fingertips with expert solutions.
+                                We specialize in AI, Cloud Computing, Engineering Solutions, and Mobile Development.
+                                Explore how we bring innovation to your fingertips with expert solutions.
+                                We specialize in AI, Cloud Computing, Engineering Solutions, and Mobile Development.
+                                Explore how we bring innovation to your fingertips with expert solutions.
+                            </p>
+                        </div>
+
+                        <!-- Right: Plus Icons -->
+                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                            <div
+                                class="plus-icon-container position-relative d-flex justify-content-center align-items-center">
+                                <!-- Center Icon -->
+                                <img src="{{ asset('svgs/ai_icon.svg') }}" alt="Center" class="icon center-icon" />
+                                <!-- Top Icon -->
+                                <img src="{{ asset('svgs/claud_icone.svg') }}" alt="Top" class="icon top-icon" />
+                                <!-- Bottom Icon -->
+                                <img src="{{ asset('svgs/enginner_icon.svg') }}" alt="Bottom" class="icon bottom-icon" />
+                                <!-- Left Icon -->
+                                <img src="{{ asset('svgs/mobile_icon.svg') }}" alt="Left" class="icon left-icon" />
+                                <!-- Right Icon -->
+                                <img src="{{ asset('svgs/ai_icon.svg') }}" alt="Right" class="icon right-icon" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
-    <div style="position: relative; width: 100%; text-align: center;">
-        <!-- Background Image -->
-        <img src="{{ asset('images/bg1.jpg') }}" alt="Background"
-            style="height: 595px; width: 100%; display: block; object-fit: cover;">
 
-        <!-- Overlay Container (Split into left and right) -->
-        <div style="
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            width: 80%;
-                            background-color: rgba(0, 0, 0, 0.5);
-                            padding: 40px;
-                            border-radius: 20px;
-                            color: white;
-                            gap: 40px;
-                        ">
+        <!-- About Us Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #1e3c72, rgb(196, 105, 191)); height:100vh">
+            <div class="container">
+                <div class="mx-auto p-4" style="max-width: 960px; ">
+                    <div
+                        class="row align-items-center bg-dark bg-opacity-50 text-white rounded-4  p-3  custom-scrollbar about-scroll">
+                        <!-- Text Column -->
+                        <div class="col-12 col-lg-7 text-start">
+                            <h1 class="fs-4 mb-3">About Us</h1>
+                            <p class="fs-6 lh-lg mb-0 scrollable-area" style="max-height:400px">
+                                <strong>WEBINARY</strong><br />
+                                At Webinary, we are passionate about shaping the future through technology. Our expertise
+                                spans
+                                across <strong>Artificial Intelligence</strong>, <strong>Cloud Computing</strong>,
+                                <strong>Engineering Solutions</strong>, and <strong>Mobile Development</strong>.<br /><br />
+                                We deliver cutting-edge solutions designed to transform businesses, empower innovation, and
+                                drive digital growth.
+                                Whether you're looking to harness the power of AI, build scalable cloud systems, engineer
+                                complex systems, or create powerful mobile experiences — we’ve got you covered.
+                                We deliver cutting-edge solutions designed to transform businesses, empower innovation, and
+                                drive digital growth.
+                                Whether you're looking to harness the power of AI, build scalable cloud systems, engineer
+                                complex systems, or create powerful mobile experiences — we’ve got you covered. We deliver
+                                cutting-edge solutions designed to transform businesses, empower innovation, and
+                                drive digital growth.
+                                Whether you're looking to harness the power of AI, build scalable cloud systems, engineer
+                                complex systems, or create powerful mobile experiences — we’ve got you covered. We deliver
+                                cutting-edge solutions designed to transform businesses, empower innovation, and
+                                drive digital growth.
+                                Whether you're looking to harness the power of AI, build scalable cloud systems, engineer
+                                complex systems, or create powerful mobile experiences — we’ve got you covered.
+                            </p>
+                        </div>
 
-            <!-- Left Side (Text) -->
-            <div style="flex: 1; text-align: left;">
-                <h1 class="fade-up" style="font-size: 32px; margin-bottom: 20px;">Welcome to Our Tech World</h1>
-                <div>
-                    <p style="
-                                font-size: 18px;
-                                line-height: 1.6;
-                                opacity: 0;
-                                transform: translateY(40px);
-                                animation: floatUp 1s ease-out forwards;
-                                
-                            ">
-                        WEBINARY <br />
-                        We specialize in AI, Cloud Computing, Engineering Solutions, and Mobile Development.
-                        Explore how we bring innovation to your fingertips with expert solutions.
+                        <!-- Image Column -->
+                        <div class="col-12 col-lg-5 d-flex justify-content-center">
+                            <img src="{{ asset('images/tech_team.jpg') }}" class="rounded-3 img-fluid"
+                                style="max-height: 260px;" alt="Tech Team" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <div class="position-relative text-center" style="min-height: 100vh;  ">
+            <!-- Background gradient layer -->
+            <div class="position-absolute top-0 start-0 w-100 h-100"
+                style="background: linear-gradient(135deg, rgb(196, 105, 191), #1e3c72); z-index: 0;"></div>
+
+            <!-- Content box -->
+            <div class="position-absolute top-50 start-50 translate-middle d-flex flex-column flex-lg-row justify-content-between align-items-center w-100 w-lg-75 bg-dark bg-opacity-50 p-4 rounded-4 text-white gap-4 z-1"
+               style="max-width: 960px;">
+
+                <!-- Services list -->
+                <div class="d-flex justify-content-center align-items-center w-100 w-lg-auto">
+                    <div class="custom-scrollbar overflow-auto p-2 border border-light-subtle rounded-3 bg-dark bg-opacity-50"
+                        style="max-height: 300px; width: 100%; max-width: 300px;">
+                        <ul class="list-unstyled text-white mb-0">
+                            @foreach ($services as $name)
+                                <li class="py-2 border-bottom border-light-subtle">
+                                    {{ $name }}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Text content -->
+                <div class="flex-fill text-start w-100">
+                    <h1 class="fade-up fs-3 mb-3">Services</h1>
+                    <p class="fade-up fs-6 lh-lg">
+                        <strong>OUR SERVICES</strong><br />
+                        At Webinary, we offer a range of cutting-edge technology
+                        solutions tailored to meet modern business needs. Our core
+                        services include:
+                        <br /><br />
+                        Partner with Webinary to bring innovation, efficiency, and
+                        scalability to your digital journey.
                     </p>
                 </div>
             </div>
-
-            <!-- Right Side (Icons) -->
-            <div style="     display: grid;
-                                grid-template-areas:
-                                    '. top .'
-                                    'left center right'
-                                    '. bottom .';
-                                gap: 20px;
-                                align-items: center;
-                                justify-items: center;
-                                width: fit-content;
-                                margin: auto;
-                            ">
-
-                <img src="{{ asset('svgs/ai_icon.svg') }}" alt="AI Icon"
-                    style="grid-area: top; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
-
-                <img src="{{ asset('svgs/claud_icone.svg') }}" alt="Cloud Icon"
-                    style="grid-area: left; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
-
-                <img src="{{ asset('svgs/enginner_icon.svg') }}" alt="Engineer Icon"
-                    style="grid-area: center; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
-
-                <img src="{{ asset('svgs/mobile_icon.svg') }}" alt="Mobile Icon"
-                    style="grid-area: right; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
-
-                <img src="{{ asset('svgs/ai_icon.svg') }}" alt="AI Icon Again (bottom)"
-                    style="grid-area: bottom; height: 100px; background-color: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px;">
-            </div>
-
         </div>
 
+
+        {{-- <div class="position-relative text-center">
+            <img src="{{ asset('images/workflow_management.jpg') }}" class="w-100" style="height: 595px; object-fit: cover"
+                alt="Workflow" />
+            <div class="position-absolute top-0 start-0 m-3 d-flex flex-column gap-4 text-white z-1"
+                style="width: 10%; padding: 30px">
+                <h1 class="fade-up fs-3">Planning</h1>
+                <p class="fade-up fs-6 text-black mt-5 ms-5">Client Consultation</p>
+                <p class="fade-up fs-6 text-black ms-3">Solution Architecture</p>
+            </div>
+        </div> --}}
     </div>
-
-
-    {{-- part2 --}}
-
-    <div style="position: relative; width: 100%; text-align: center; height: 595px;">
-
-        <!-- Gradient Background -->
-        <div style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #1e3c72, #2a5298); /* You can change these colors */
-            z-index: 0;
-        ">
-        </div>
-
-        <!-- Overlay Container (Split into left and right) -->
-        <div style="
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 80%;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 40px;
-            border-radius: 20px;
-            color: white;
-            gap: 40px;
-            z-index: 1;
-        ">
-
-            <!-- Left Side (Text) -->
-            <div style="flex: 1; text-align: left;">
-                <h1 class="fade-up" style="font-size: 32px; margin-bottom: 20px;">About Us</h1>
-
-                <p class="fade-up" style="font-size: 18px; line-height: 1.6;">
-                    <strong>WEBINARY</strong><br />
-                    At Webinary, we are passionate about shaping the future through technology. Our expertise spans
-                    across
-                    <strong>Artificial Intelligence</strong>, <strong>Cloud Computing</strong>, <strong>Engineering
-                        Solutions</strong>, and
-                    <strong>Mobile Development</strong>.
-                    <br /><br />
-                    We deliver cutting-edge solutions designed to transform businesses, empower innovation, and drive
-                    digital growth.
-                    Whether you're looking to harness the power of AI, build scalable cloud systems, engineer complex
-                    systems, or create powerful mobile experiences — we’ve got you covered.
-                </p>
-            </div>
-
-            <!-- Right Side (Image) -->
-            <div style="display: flex; justify-content: center; align-items: center;">
-                <img src="{{ asset('images/tech_team.jpg') }}" alt="Tech Team"
-                    style="height: 300px; border-radius: 12px;">
-            </div>
-        </div>
-    </div>
-
-    {{-- part3 --}}
-
-    <div style="position: relative; width: 100%; text-align: center; height: 595px;">
-
-        <!-- Gradient Background -->
-        <div style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-             background: linear-gradient(135deg, #667eea, #764ba2); /* You can change these colors */
-            z-index: 0;
-        ">
-        </div>
-
-        <!-- Overlay Container (Split into left and right) -->
-        <div style="
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 80%;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 40px;
-            border-radius: 20px;
-            color: white;
-            gap: 40px;
-            z-index: 1;
-        ">
-            <!-- Left Side (Text) -->
-            <div style="display: flex; justify-content: center; align-items: center;">
-                <div class="custom-scrollbar"
-                    style="max-height: 300px; overflow-y: auto; padding: 10px; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; width: 300px; background-color: rgba(0, 0, 0, 0.5);">
-                    <ul style="list-style: none; padding: 0; margin: 0; color: #fff;">
-                        @foreach ($services as $name)
-                        <li style="padding: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-                            {{ $name }}
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-
-
-
-
-
-
-            <!-- Right Side (Image) -->
-            <div style="flex: 1; text-align: left;">
-                <h1 class="fade-up" style="font-size: 32px; margin-bottom: 20px;">Services</h1>
-
-                <p class="fade-up" style="font-size: 18px; line-height: 1.6;">
-                    <strong>OUR SERVICES</strong><br />
-                    At Webinary, we offer a range of cutting-edge technology solutions tailored to meet modern business
-                    needs. Our core services include:
-                    <br /><br />
-
-
-                    Partner with Webinary to bring innovation, efficiency, and scalability to your digital journey.
-
-                </p>
-            </div>
-
-
-        </div>
-    </div>
-
-    {{-- page-4 --}}
-
-    <div style="position: relative; width: 100%; text-align: center;">
-        <!-- Background Image -->
-        <img src="{{ asset('images/workflow_management.jpg') }}" alt="Background"
-            style="height: 595px; width: 100%; display: block;">
-
-        <!-- Top-Left Overlay Box -->
-        <div style="
-                    position: absolute;
-                    top: 20px;
-                    left: 20px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: left;
-                    width: 10%;
-                    padding: 30px;
-                    border-radius: 20px;
-                    color: white;
-                    gap: 40px;
-                    z-index: 1;
-                ">
-            <h1 class="fade-up" style="font-size: 32px; margin-bottom: 20px;">Planning</h1>
-            <p class="fade-up" style="font-size: 12px;margin-top: 190px; margin-left: 45px; color: black;">Client
-                Consultation</p>
-            <p class="fade-up" style="font-size: 12px;margin-top: 20px; margin-left: 22px; color: black;">
-                Solution Architecture</p>
-
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-</div>
-
-@endsection
-
-@section('script')
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const fadeElements = document.querySelectorAll('.fade-up');
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                } else {
-                    entry.target.classList.remove('visible');
+    @endsection @section('script')
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const fadeElements = document.querySelectorAll(".fade-up");
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        } else {
+                            entry.target.classList.remove("visible");
+                        }
+                    });
+                }, {
+                    threshold: 0.2,
                 }
-            });
-        }, {
-            threshold: 0.2 // 20% of element must be visible
+            );
+            fadeElements.forEach((el) => observer.observe(el));
         });
-
-        fadeElements.forEach(el => observer.observe(el));
-    });
-</script>
-
+    </script>
 @endsection
