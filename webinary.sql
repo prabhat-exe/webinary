@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2025 at 02:09 PM
+-- Generation Time: Jun 12, 2025 at 02:14 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -116,7 +116,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '0001_01_01_000000_create_users_table', 1),
 (2, '0001_01_01_000001_create_cache_table', 1),
 (3, '0001_01_01_000002_create_jobs_table', 1),
-(4, '2025_06_11_095802_services', 2);
+(4, '2025_06_11_095802_services', 2),
+(5, '2025_06_12_094546_create_projects_table', 3),
+(6, '2025_06_12_102404_create_reviews_table', 4);
 
 -- --------------------------------------------------------
 
@@ -129,6 +131,71 @@ CREATE TABLE `password_reset_tokens` (
   `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projects`
+--
+
+CREATE TABLE `projects` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`id`, `title`, `description`, `image`, `link`, `created_at`, `updated_at`) VALUES
+(1, 'E-commerce Platform', 'A full-stack web store with admin dashboard.', 'images/portfolio1.jpg', 'https://example.com/project1', '2025-06-12 09:46:54', '2025-06-12 09:46:54'),
+(2, 'Mobile App UI', 'A modern app interface design.', 'images/portfolio2.jpg', 'https://example.com/project2', '2025-06-12 09:46:54', '2025-06-12 09:46:54'),
+(3, 'E-commerce Platform', 'A full-stack web store with admin dashboard.', 'images/portfolio1.jpg', 'https://example.com/project1', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
+(4, 'Mobile App UI', 'A modern app interface design.', 'images/portfolio2.jpg', 'https://example.com/project2', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
+(5, 'Portfolio Website', 'A personal portfolio site built with HTML, CSS, and JavaScript.', 'images/portfolio3.jpg', 'https://example.com/project3', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
+(6, 'Blog System', 'A dynamic blog system with admin panel and user comments.', 'images/portfolio4.jpg', 'https://example.com/project4', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
+(7, 'Restaurant App', 'An ordering and reservation system for a restaurant.', 'images/portfolio5.jpg', 'https://example.com/project5', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
+(8, 'Task Management Tool', 'A project and task management app like Trello.', 'images/portfolio6.jpg', 'https://example.com/project6', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
+(9, 'Online Learning Platform', 'A course management system with video streaming.', 'images/portfolio7.jpg', 'https://example.com/project7', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
+(10, 'Weather Forecast App', 'A responsive app showing real-time weather updates.', 'images/portfolio8.jpg', 'https://example.com/project8', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
+(11, 'Finance Tracker', 'A budgeting app for personal expense tracking.', 'images/portfolio9.jpg', 'https://example.com/project9', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
+(12, 'Event Booking System', 'A complete system for managing and booking events.', 'images/portfolio10.jpg', 'https://example.com/project10', '2025-06-12 09:55:27', '2025-06-12 09:55:27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `client_name` varchar(255) NOT NULL,
+  `designation` varchar(255) DEFAULT NULL,
+  `comment` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `client_name`, `designation`, `comment`, `created_at`, `updated_at`) VALUES
+(1, 'John Doe', 'CEO, TechNova', 'Webinary transformed our digital presence beyond expectations!', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
+(2, 'Jane Smith', 'CTO, InnovateX', 'Highly professional team with innovative solutions.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
+(3, 'Alice Johnson', 'Marketing Lead, SkyReach', 'They helped us scale our marketing automation efficiently.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
+(4, 'Robert Brown', 'Founder, CodeGrid', 'Great experience working with Webinary – would definitely recommend.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
+(5, 'Emily Davis', 'Product Manager, NextGenApps', 'Our product launch went flawlessly thanks to their tech expertise.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
+(6, 'Michael Lee', 'Operations Head, Finverse', 'Reliable, smart, and always on time. Fantastic service.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
+(7, 'Sarah Wilson', 'UX Designer, PixelWave', 'The UI/UX support was top-notch and aligned with our goals.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
+(8, 'David Clark', 'Manager, CloudSphere', 'They delivered exactly what we envisioned for our cloud migration.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
+(9, 'Laura Hall', 'Engineer, FutureTech', 'Always proactive, responsive, and knowledgeable. Highly satisfied.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
+(10, 'Daniel Lewis', 'Director, GreenStack', 'The best tech partner we’ve worked with in the last 5 years.', '2025-06-12 10:27:25', '2025-06-12 10:27:25');
 
 -- --------------------------------------------------------
 
@@ -185,7 +252,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('V45SWxOwVe5TrenVD3F2XS34YIB8BCe0wdqLZkau', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiN1JDRGdOMmpIN2hQRUJJZlJVcXMzcFNLckpUVUxoQ2hkOFlZY3ZKVCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9ob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1749643616);
+('sd3Qqx889M8JM2uQyIuLyvQRTop6x7lSzycEqADt', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSzJINFlUN2pMVHE4QUVheUs1eUxuRGpsb3g5WEtsNGc0eFRTOGRZbSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9ob21lP3BhZ2U9MiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1749729259);
 
 -- --------------------------------------------------------
 
@@ -253,6 +320,18 @@ ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
+-- Indexes for table `projects`
+--
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `services`
 --
 ALTER TABLE `services`
@@ -294,7 +373,19 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `projects`
+--
+ALTER TABLE `projects`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `services`
