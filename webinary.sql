@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2025 at 02:14 PM
+-- Generation Time: Jun 16, 2025 at 02:32 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -64,6 +64,31 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `header`
+--
+
+CREATE TABLE `header` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `option` varchar(255) NOT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `header`
+--
+
+INSERT INTO `header` (`id`, `option`, `link`, `created_at`, `updated_at`) VALUES
+(1, 'home', '', '2025-06-15 18:30:00', '2025-06-15 18:30:00'),
+(2, 'about', 'about', NULL, NULL),
+(3, 'services', 'services', NULL, NULL),
+(4, 'portfolio', 'portfolio', NULL, NULL),
+(5, 'contact', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `jobs`
 --
 
@@ -99,6 +124,27 @@ CREATE TABLE `job_batches` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `menu_options`
+--
+
+CREATE TABLE `menu_options` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `section` varchar(255) DEFAULT NULL,
+  `options` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `menu_options`
+--
+
+INSERT INTO `menu_options` (`id`, `section`, `options`, `created_at`, `updated_at`) VALUES
+(1, 'header_section', 'home,About,Services,Portfolio,Contact', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -118,7 +164,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '0001_01_01_000002_create_jobs_table', 1),
 (4, '2025_06_11_095802_services', 2),
 (5, '2025_06_12_094546_create_projects_table', 3),
-(6, '2025_06_12_102404_create_reviews_table', 4);
+(6, '2025_06_12_102404_create_reviews_table', 4),
+(7, '2025_06_16_054345_menu_options', 5),
+(8, '2025_06_16_063047_header_options', 6);
 
 -- --------------------------------------------------------
 
@@ -252,7 +300,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('sd3Qqx889M8JM2uQyIuLyvQRTop6x7lSzycEqADt', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSzJINFlUN2pMVHE4QUVheUs1eUxuRGpsb3g5WEtsNGc0eFRTOGRZbSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9ob21lP3BhZ2U9MiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1749729259);
+('bA1Jz47TlqlqC7Jnrq25g440Q5NPlgc8aarj87fr', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiV2N4ZlBqNFBkR0xvRmdXZmh0ZzloR3JoS09tb1ZKcTAyMmo0bnFVUSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zZXJ2aWNlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1750068312),
+('XIvjKdS5um2ze3F7ct7J4Rb8vO0OsbYs0g934xIo', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZGVvZlRXRmJlYU9qb3dmNDJ5U3VrbVJIZ2dyNXJwSHFpVDltQWdhVyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wb3J0Zm9saW8iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1750076942);
 
 -- --------------------------------------------------------
 
@@ -295,6 +344,12 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
+-- Indexes for table `header`
+--
+ALTER TABLE `header`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `jobs`
 --
 ALTER TABLE `jobs`
@@ -305,6 +360,12 @@ ALTER TABLE `jobs`
 -- Indexes for table `job_batches`
 --
 ALTER TABLE `job_batches`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menu_options`
+--
+ALTER TABLE `menu_options`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -364,16 +425,28 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `header`
+--
+ALTER TABLE `header`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `menu_options`
+--
+ALTER TABLE `menu_options`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `projects`
