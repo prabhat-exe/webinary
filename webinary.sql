@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2025 at 02:32 PM
+-- Generation Time: Jun 17, 2025 at 02:13 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -84,7 +84,7 @@ INSERT INTO `header` (`id`, `option`, `link`, `created_at`, `updated_at`) VALUES
 (2, 'about', 'about', NULL, NULL),
 (3, 'services', 'services', NULL, NULL),
 (4, 'portfolio', 'portfolio', NULL, NULL),
-(5, 'contact', NULL, NULL, NULL);
+(5, 'contact', 'contact', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -193,26 +193,29 @@ CREATE TABLE `projects` (
   `image` varchar(255) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `playstoreId` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `projects`
 --
 
-INSERT INTO `projects` (`id`, `title`, `description`, `image`, `link`, `created_at`, `updated_at`) VALUES
-(1, 'E-commerce Platform', 'A full-stack web store with admin dashboard.', 'images/portfolio1.jpg', 'https://example.com/project1', '2025-06-12 09:46:54', '2025-06-12 09:46:54'),
-(2, 'Mobile App UI', 'A modern app interface design.', 'images/portfolio2.jpg', 'https://example.com/project2', '2025-06-12 09:46:54', '2025-06-12 09:46:54'),
-(3, 'E-commerce Platform', 'A full-stack web store with admin dashboard.', 'images/portfolio1.jpg', 'https://example.com/project1', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
-(4, 'Mobile App UI', 'A modern app interface design.', 'images/portfolio2.jpg', 'https://example.com/project2', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
-(5, 'Portfolio Website', 'A personal portfolio site built with HTML, CSS, and JavaScript.', 'images/portfolio3.jpg', 'https://example.com/project3', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
-(6, 'Blog System', 'A dynamic blog system with admin panel and user comments.', 'images/portfolio4.jpg', 'https://example.com/project4', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
-(7, 'Restaurant App', 'An ordering and reservation system for a restaurant.', 'images/portfolio5.jpg', 'https://example.com/project5', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
-(8, 'Task Management Tool', 'A project and task management app like Trello.', 'images/portfolio6.jpg', 'https://example.com/project6', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
-(9, 'Online Learning Platform', 'A course management system with video streaming.', 'images/portfolio7.jpg', 'https://example.com/project7', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
-(10, 'Weather Forecast App', 'A responsive app showing real-time weather updates.', 'images/portfolio8.jpg', 'https://example.com/project8', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
-(11, 'Finance Tracker', 'A budgeting app for personal expense tracking.', 'images/portfolio9.jpg', 'https://example.com/project9', '2025-06-12 09:55:27', '2025-06-12 09:55:27'),
-(12, 'Event Booking System', 'A complete system for managing and booking events.', 'images/portfolio10.jpg', 'https://example.com/project10', '2025-06-12 09:55:27', '2025-06-12 09:55:27');
+INSERT INTO `projects` (`id`, `title`, `description`, `image`, `link`, `created_at`, `updated_at`, `playstoreId`) VALUES
+(1, 'E-commerce Platform', 'A full-stack web store with admin dashboard.', 'images/portfolio1.jpg', 'https://example.com/project1', '2025-06-12 09:46:54', '2025-06-12 09:46:54', NULL),
+(2, 'Mobile App UI', 'A modern app interface design.', 'images/portfolio2.jpg', 'https://example.com/project2', '2025-06-12 09:46:54', '2025-06-12 09:46:54', NULL),
+(3, 'E-commerce Platform', 'A full-stack web store with admin dashboard.', 'images/portfolio1.jpg', 'https://example.com/project1', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
+(4, 'Mobile App UI', 'A modern app interface design.', 'images/portfolio2.jpg', 'https://example.com/project2', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
+(5, 'Portfolio Website', 'A personal portfolio site built with HTML, CSS, and JavaScript.', 'images/portfolio3.jpg', 'https://example.com/project3', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
+(6, 'Blog System', 'A dynamic blog system with admin panel and user comments.', 'images/portfolio4.jpg', 'https://example.com/project4', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
+(7, 'Restaurant App', 'An ordering and reservation system for a restaurant.', 'images/portfolio5.jpg', 'https://example.com/project5', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
+(8, 'Task Management Tool', 'A project and task management app like Trello.', 'images/portfolio6.jpg', 'https://example.com/project6', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
+(9, 'Online Learning Platform', 'A course management system with video streaming.', 'images/portfolio7.jpg', 'https://example.com/project7', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
+(10, 'Weather Forecast App', 'A responsive app showing real-time weather updates.', 'images/portfolio8.jpg', 'https://example.com/project8', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
+(11, 'Finance Tracker', 'A budgeting app for personal expense tracking.', 'images/portfolio9.jpg', 'https://example.com/project9', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
+(12, 'Event Booking System', 'A complete system for managing and booking events.', 'images/portfolio10.jpg', 'https://example.com/project10', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
+(13, 'doodhvale', 'This application is used for ordering milk and various daily essential. Payment is done through Paytm and HDFC payment gateways.', NULL, 'https://www.doodhvale.com/', NULL, NULL, 'com.technologies.subtlelabs.doodhvale'),
+(14, 'Kripalu Nidhi', 'Kripalu Nidhi application is developed for Jagatguru Kripalu Parishad where user and see Video and listen to Audio of jagatguru Kripalu Maharaj we have implemented Razorpay and PayPal payment gateway also we have implemented Exo player and YouTube player for playing video.', NULL, 'https://kripalunidhi.org/', NULL, NULL, 'com.kripalunidhi');
 
 -- --------------------------------------------------------
 
@@ -300,8 +303,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('bA1Jz47TlqlqC7Jnrq25g440Q5NPlgc8aarj87fr', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiV2N4ZlBqNFBkR0xvRmdXZmh0ZzloR3JoS09tb1ZKcTAyMmo0bnFVUSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zZXJ2aWNlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1750068312),
-('XIvjKdS5um2ze3F7ct7J4Rb8vO0OsbYs0g934xIo', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZGVvZlRXRmJlYU9qb3dmNDJ5U3VrbVJIZ2dyNXJwSHFpVDltQWdhVyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wb3J0Zm9saW8iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1750076942);
+('2F58ldVdjd01jLy5zxBA4BUo8g07pexgcAvkX5cs', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidzFTdjFqNE5lbGw4WXAwRFZIalBJQ09EZzBVUUpvZDZRRjdyNEpBQyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1750162306);
 
 -- --------------------------------------------------------
 
@@ -452,7 +454,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `reviews`
