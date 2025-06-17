@@ -1,7 +1,7 @@
-@extends('layout.header')
+@extends('layout.home')
 @section('title', 'Our Services')
 @section('content')
-    <div style="min-height: 2000px">
+<div class="portfolio-page">
         <!-- Hero Section -->
         <section class="hero-section position-relative m-0 p-0" style="min-height: 100vh; overflow: hidden">
             <img src="{{ asset('images/servicespage.jpg') }}" class="position-absolute top-0 start-0 w-100 h-100"

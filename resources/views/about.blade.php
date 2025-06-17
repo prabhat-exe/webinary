@@ -1,4 +1,4 @@
-@extends('layout.header') 
+@extends('layout.home') 
 @section('title', 'About Us') 
 @section('content') 
 @if(session('success'))
@@ -16,7 +16,7 @@
 </div>
 @endif
 
-<div style="min-height: 2000px">
+<div class="portfolio-page">
     <!-- Hero Section -->
     <section
         class="hero-section position-relative m-0 p-0"
