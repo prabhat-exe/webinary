@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2025 at 02:13 PM
+-- Generation Time: Jun 18, 2025 at 02:15 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -89,6 +89,30 @@ INSERT INTO `header` (`id`, `option`, `link`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `homepagesections`
+--
+
+CREATE TABLE `homepagesections` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `section` varchar(255) NOT NULL,
+  `content` longtext NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp(),
+  `title` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `homepagesections`
+--
+
+INSERT INTO `homepagesections` (`id`, `section`, `content`, `created_at`, `updated_at`, `title`) VALUES
+(1, 'first', 'At WEBINARY, we are at the forefront of technological advancement, specializing in four key areas: Artificial Intelligence, Cloud Computing, Engineering Solutions, and Mobile Development. Our mission is to bring innovation to your fingertips, empowering your business to thrive in a rapidly evolving digital landscape.\n\nArtificial Intelligence (AI):\nHarness the power of AI to transform your operations. Our team of experts develops intelligent systems that enhance decision-making, automate processes, and provide deep insights through data analysis. From machine learning algorithms to natural language processing, we tailor AI solutions that meet your unique business needs.\n\nCloud Computing:\nEmbrace the future with our cloud computing services. We offer scalable and secure cloud solutions that enable you to store, manage, and analyze data efficiently. Whether you need public, private, or hybrid cloud services, our cloud experts ensure seamless integration and optimal performance, allowing you to focus on what matters most—growing your business.\n\nEngineering Solutions:\nOur engineering solutions are designed to solve complex challenges and drive innovation. We leverage cutting-edge technologies and methodologies to deliver high-quality products and services. From product design and development to system integration and testing, our engineering team is dedicated to providing solutions that are not only effective but also sustainable.\n\nMobile Development:\nIn today’s mobile-first world, having a robust mobile presence is essential. Our mobile development team creates user-friendly applications that engage your audience and enhance customer experience. We specialize in both iOS and Android platforms, ensuring that your app is optimized for performance and usability.\n\nAt [Your Company Name], we believe in collaboration and innovation. Our expert solutions are tailored to meet the specific needs of your business, ensuring that you stay ahead of the competition. Let us partner with you to explore new possibilities and drive your success in the digital age.', NULL, NULL, 'Welcome to WEBINARY'),
+(2, 'aboutus', ' At Webinary, we are passionate about shaping the\n                            future through technology. Our expertise spans\n                            across <strong>Artificial Intelligence</strong>,\n                            <strong>Cloud Computing</strong>,\n                            <strong>Engineering Solutions</strong>, and\n                            <strong>Mobile Development</strong>.<br /><br />\n                            We deliver cutting-edge solutions designed to\n                            transform businesses, empower innovation, and drive\n                            digital growth. Whether you\'re looking to harness\n                            the power of AI, build scalable cloud systems,\n                            engineer complex systems, or create powerful mobile\n                            experiences — we’ve got you covered. We deliver\n                            cutting-edge solutions designed to transform\n                            businesses, empower innovation, and drive digital\n                            growth. Whether you\'re looking to harness the power\n                            of AI, build scalable cloud systems, engineer\n                            complex systems, or create powerful mobile\n                            experiences — we’ve got you covered. We deliver\n                            cutting-edge solutions designed to transform\n                            businesses, empower innovation, and drive digital\n                            growth. Whether you\'re looking to harness the power\n                            of AI, build scalable cloud systems, engineer\n                            complex systems, or create powerful mobile\n                            experiences — we’ve got you covered. We deliver\n                            cutting-edge solutions designed to transform\n                            businesses, empower innovation, and drive digital\n                            growth. Whether you\'re looking to harness the power\n                            of AI, build scalable cloud systems, engineer\n                            complex systems, or create powerful mobile\n                            experiences — we’ve got you covered.', '2025-06-18 11:34:55', '2025-06-18 11:34:55', 'About Us'),
+(3, 'services', '<strong>OUR SERVICES</strong><br />\n                            At Webinary, we offer a range of cutting-edge\n                            technology solutions tailored to meet modern\n                            business needs. Our core services include:\n                            <br /><br />\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.', '2025-06-18 11:37:19', '2025-06-18 11:37:19', 'Services');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `jobs`
 --
 
@@ -166,7 +190,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2025_06_12_094546_create_projects_table', 3),
 (6, '2025_06_12_102404_create_reviews_table', 4),
 (7, '2025_06_16_054345_menu_options', 5),
-(8, '2025_06_16_063047_header_options', 6);
+(8, '2025_06_16_063047_header_options', 6),
+(9, '2025_06_18_111450_create_homepagesections_table', 7);
 
 -- --------------------------------------------------------
 
@@ -303,7 +328,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('2F58ldVdjd01jLy5zxBA4BUo8g07pexgcAvkX5cs', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidzFTdjFqNE5lbGw4WXAwRFZIalBJQ09EZzBVUUpvZDZRRjdyNEpBQyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1750162306);
+('2F58ldVdjd01jLy5zxBA4BUo8g07pexgcAvkX5cs', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidzFTdjFqNE5lbGw4WXAwRFZIalBJQ09EZzBVUUpvZDZRRjdyNEpBQyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1750163136),
+('zXJFI7gt9mMeadEjsPHe28DpdJK0zyplbkdl0EPs', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozMjoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2FkbWluTG9naW4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjY6Il90b2tlbiI7czo0MDoieUxLM2ZkdFlWSldUMnBXc1FOcFZ5N3VxdWpsa21tcGt1UkdoalhQbyI7fQ==', 1750240224);
 
 -- --------------------------------------------------------
 
@@ -349,6 +375,12 @@ ALTER TABLE `failed_jobs`
 -- Indexes for table `header`
 --
 ALTER TABLE `header`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `homepagesections`
+--
+ALTER TABLE `homepagesections`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -433,6 +465,12 @@ ALTER TABLE `header`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `homepagesections`
+--
+ALTER TABLE `homepagesections`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
@@ -448,7 +486,7 @@ ALTER TABLE `menu_options`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `projects`
