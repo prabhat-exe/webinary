@@ -8,20 +8,44 @@ use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\contactController;
 
+use App\Http\Controllers\adminControllers\adminLoginController;
+use App\Http\Controllers\adminControllers\adminDashboardController;
+use App\Http\Controllers\adminControllers\adminHomeController;
 use Illuminate\Support\Facades\Log;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-Route::get('/',[homeController::class,'home'])->name('home');
+Route::get('/', [homeController::class, 'home'])->name('home');
 Route::post('/contact', [homeController::class, 'submit'])->name('contact.submit');
-Route::get('/about',[AboutUs::class,'aboutus'])->name('about');
-Route::get('/services',[ServicesController::class,'services'])->name('services');
-Route::get('/portfolio',[PortfolioController::class,'portfolio'])->name('portfolio');
-Route::get('/appsportfolio',[PortfolioController::class,'appsportfolio'])->name('appsportfolio');
-Route::get('/contact',[contactController::class,'contact'])->name('contact');
+Route::get('/about', [AboutUs::class, 'aboutus'])->name('about');
+Route::get('/services', [ServicesController::class, 'services'])->name('services');
+Route::get('/portfolio', [PortfolioController::class, 'portfolio'])->name('portfolio');
+Route::get('/appsportfolio', [PortfolioController::class, 'appsportfolio'])->name('appsportfolio');
+Route::get('/contact', [contactController::class, 'contact'])->name('contact');
 
 
+
+Route::get('/adminLogin', [adminLoginController::class, 'adminLogin'])->name('adminLogin');
+
+Route::post('/adminLogin', [adminLoginController::class, 'checkCredential']);
+
+// Route::get('/adminDashboard', [adminDashboardController::class, 'adminDashboard'])
+//     ->name('adminDashboard');
+Route::get('/adminLogout', [adminLoginController::class, 'adminLogout'])->name('adminLogout');
+
+Route::group(['middleware' => ['checkLogin']], function () {
+    Route::get('/adminDashboard', [adminDashboardController::class, 'adminDashboard'])
+    ->name('adminDashboard');
+    Route::get('/adminHome', [adminHomeController::class, 'adminHome'])
+    ->name('adminHome');
+});
+
+
+
+Route::get('/refresh-captcha', function () {
+    return response()->json(['captcha' => captcha_img()]);
+});
 
 
 Route::get('/dns-check', function () {

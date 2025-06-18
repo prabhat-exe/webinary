@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Services;
 use App\Models\Projects;
 use App\Models\header_option;
+use App\Models\homepageSection;
+
 
 
 
@@ -17,6 +19,11 @@ class homeController extends Controller
     {
         // https://subtlelabs.com/our-services.php
         // $services = Services::all();
+        // $homepagedata=homepageSection::all();
+        // dd($homepagedata);
+
+        $sections = homepageSection::all()->keyBy('section');
+      
         $services = Services::pluck('service_name');
         $projects = Projects::take(3)->get();
 
@@ -26,7 +33,7 @@ class homeController extends Controller
         // dd($header);
 
 
-        return view('home', compact('services', 'projects', 'reviews', 'header'));
+        return view('home', compact('sections','services', 'projects', 'reviews', 'header'));
     }
 
     public function submit(Request $request)
