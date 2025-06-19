@@ -7,6 +7,7 @@ use App\Models\Services;
 use App\Models\Projects;
 use App\Models\header_option;
 use App\Models\homepageSection;
+use App\Models\Clients;
 
 
 
@@ -23,17 +24,19 @@ class homeController extends Controller
         // dd($homepagedata);
 
         $sections = homepageSection::all()->keyBy('section');
-      
+
         $services = Services::pluck('service_name');
-        $projects = Projects::take(3)->get();
+        $projects = Projects::where('homeview', 1)->get();
+
 
         //    $reviews = Reviews::latest()->paginate(9); // ✅ Correct
-        $reviews = Reviews::all();
-        $header=header_option::all();
+        $reviews = Clients::where('homeview', 1)->get();
+        // dd($reviews);
+        $header = header_option::all();
         // dd($header);
 
 
-        return view('home', compact('sections','services', 'projects', 'reviews', 'header'));
+        return view('home', compact('sections', 'services', 'projects', 'reviews', 'header'));
     }
 
     public function submit(Request $request)

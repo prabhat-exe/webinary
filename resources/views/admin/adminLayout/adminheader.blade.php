@@ -44,9 +44,9 @@
 
             <a href="{{ route('adminHome') }}" class="nav-link text-white fs-6 m-3">HOME</a>
 
-            <a href="{{ route('adminLogout') }}" class="nav-link text-white fs-6 m-3">ABOUT</a>
+           
 
-            <a href="{{ route('adminLogout') }}" class="nav-link text-white fs-6 m-3">SERVICES</a>
+            <a href="{{ route('adminServices') }}" class="nav-link text-white fs-6 m-3">SERVICES</a>
 
             <a href="{{ route('adminLogout') }}" class="nav-link text-white fs-6 m-3">PORTFOLIO</a>
 

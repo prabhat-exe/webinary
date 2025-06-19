@@ -10,8 +10,7 @@
                 <div class="bg-dark bg-opacity-50 rounded-4 w-75 mx-auto p-4 section-card fade-up">
                     <h1 class="section-title text-center">Our Services</h1>
                     <p class="section-text text-center">
-                        At <strong>Webinary</strong>, we offer a wide range of advanced technology solutions to empower your
-                        digital transformation.
+                       {{$content}}
                     </p>
                 </div>
             </div>

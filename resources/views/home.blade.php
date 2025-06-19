@@ -28,7 +28,7 @@
                                 </h1>
 
                                 <p class=" fs-6 lh-lg fade-up" style="animation: floatUp 1s ease-out forwards">
-                                    {{ \Illuminate\Support\Str::words($sections['first']->content, 60, '...') }}
+                                    {!! \Illuminate\Support\Str::words($sections['first']->content, 60, '...') !!}
                                 </p>
                             </div>
 
@@ -163,7 +163,8 @@
                                         {{ $project['title'] }}
                                     </h5>
                                     <p class="card-text small text-white-50">
-                                        {{ $project['description'] }}
+                                      
+                                        {{ \Illuminate\Support\Str::words($project['description'], 60, '...') }}
                                     </p>
                                 </div>
 
@@ -208,13 +209,13 @@
                                             min-height: 230px;
                                         ">
                                             <h5 class="mb-1">
-                                                {{ $review->client_name }}
+                                                {{ $review->name }}
                                             </h5>
                                             <p class="mb-1 small text-white-50">
-                                                {{ $review->designation ?? 'Client' }}
+                                                {{ $review->designation ?? 'Client' }}, {{ $review->company ?? 'Company' }}
                                             </p>
                                             <p class="mb-0 fst-italic">
-                                                “{{ $review->comment }}”
+                                                “{{ $review->feedback }}”
                                             </p>
                                         </div>
                                     </div>

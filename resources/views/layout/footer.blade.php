@@ -37,21 +37,14 @@
             <a href="https://facebook.com" target="_blank" class="text-white me-3" title="Facebook">
                 <i class="bi bi-facebook fs-5"></i>
             </a>
-            <a href="https://twitter.com" target="_blank" class="text-white me-3" title="Twitter">
-                <i class="bi bi-twitter-x fs-5"></i>
-            </a>
+           
             <a href="https://instagram.com" target="_blank" class="text-white me-3" title="Instagram">
                 <i class="bi bi-instagram fs-5"></i>
             </a>
             <a href="https://linkedin.com" target="_blank" class="text-white me-3" title="LinkedIn">
                 <i class="bi bi-linkedin fs-5"></i>
             </a>
-            <a href="https://github.com" target="_blank" class="text-white me-3" title="GitHub">
-                <i class="bi bi-github fs-5"></i>
-            </a>
-            <a href="https://youtube.com" target="_blank" class="text-white" title="YouTube">
-                <i class="bi bi-youtube fs-5"></i>
-            </a>
+           
         </div>
 
         <!-- Footer Bottom -->

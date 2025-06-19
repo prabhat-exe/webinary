@@ -11,6 +11,8 @@ use App\Http\Controllers\contactController;
 use App\Http\Controllers\adminControllers\adminLoginController;
 use App\Http\Controllers\adminControllers\adminDashboardController;
 use App\Http\Controllers\adminControllers\adminHomeController;
+use App\Http\Controllers\adminControllers\adminServicesController;
+
 use Illuminate\Support\Facades\Log;
 // Route::get('/', function () {
 //     return view('welcome');
@@ -36,9 +38,21 @@ Route::get('/adminLogout', [adminLoginController::class, 'adminLogout'])->name('
 
 Route::group(['middleware' => ['checkLogin']], function () {
     Route::get('/adminDashboard', [adminDashboardController::class, 'adminDashboard'])
-    ->name('adminDashboard');
+        ->name('adminDashboard');
     Route::get('/adminHome', [adminHomeController::class, 'adminHome'])
-    ->name('adminHome');
+        ->name('adminHome');
+    // routes/web.php
+
+    Route::put('/admin/section/{id}/update', [adminHomeController::class, 'update'])->name('admin.section.update');
+    Route::put('/admin/projects/updateprojectview', [adminHomeController::class, 'updateHomeview'])->name('admin.projects.updateHomeview');
+    Route::put('/admin/reviews/updateprojectview', [adminHomeController::class, 'updatereviewHomeview'])->name('admin.reviews.updateHomeview');
+
+    Route::get('/admin/Services', [adminServicesController::class, 'adminServices'])->name('adminServices');
+    Route::resource('admin/services', adminServicesController::class)->except(['show']);
+      Route::put('/admin/services/{id}', [adminServicesController::class, 'update'])->name('admin.services.update');
+     Route::post('/admin/servicesdelete/{id}', [adminServicesController::class, 'delete'])->name('admin.services.delete');
+
+
 });
 
 
