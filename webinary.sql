@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2025 at 02:15 PM
+-- Generation Time: Jun 19, 2025 at 02:03 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -44,6 +44,42 @@ CREATE TABLE `cache_locks` (
   `owner` varchar(255) NOT NULL,
   `expiration` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clients`
+--
+
+CREATE TABLE `clients` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `company` varchar(255) DEFAULT NULL,
+  `designation` varchar(255) DEFAULT NULL,
+  `feedback` text DEFAULT NULL,
+  `comment` text DEFAULT NULL,
+  `homeview` tinyint(1) NOT NULL DEFAULT 0,
+  `project_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `clients`
+--
+
+INSERT INTO `clients` (`id`, `name`, `email`, `company`, `designation`, `feedback`, `comment`, `homeview`, `project_id`, `created_at`, `updated_at`) VALUES
+(1, 'John Doe', 'john@example.com', 'TechNova Ltd.', 'CTO', 'Webinary helped us launch our platform faster than expected.', 'Amazing service and support.', 1, 1, '2025-06-19 10:09:10', '2025-06-19 04:48:54'),
+(2, 'Sara Ahmed', 'sara@innovatehub.io', 'Innovate Hub', 'Product Manager', 'The AI integration was smooth and impactful.', 'Great experience overall.', 0, 2, '2025-06-19 10:09:10', '2025-06-19 04:48:54'),
+(3, 'Carlos Reyes', 'carlos@finverse.com', 'Finverse', 'Lead Developer', 'Backend scalability was on point.', 'Highly recommended.', 0, 1, '2025-06-19 10:09:10', '2025-06-19 04:48:54'),
+(4, 'Emily Zhang', 'emily@healthlytics.com', 'Healthlytics', 'Data Scientist', 'Their analytics dashboard really changed how we operate.', 'Excellent UX.', 0, 3, '2025-06-19 10:09:10', '2025-06-19 04:48:54'),
+(5, 'David Smith', 'david@quantumcore.io', 'QuantumCore', 'Founder', 'Secure and performant cloud systems.', 'Top-notch engineering.', 0, 4, '2025-06-19 10:09:10', '2025-06-19 04:48:54'),
+(6, 'Lina Kapoor', 'lina@edutechx.com', 'EduTechX', 'Director', 'Great LMS integration and support.', '5 stars service.', 0, 2, '2025-06-19 10:09:10', '2025-06-19 04:48:54'),
+(7, 'Robert Kim', 'robert@autonomech.com', 'AutonoMech', 'Operations Head', 'Helped optimize our automation stack.', 'Would work again.', 0, 5, '2025-06-19 10:09:10', '2025-06-19 04:48:54'),
+(8, 'Fatima Al-Mansoori', 'fatima@securegrid.ae', 'SecureGrid', 'Security Analyst', 'Security-first design was deeply appreciated.', 'Responsive and skilled.', 0, 4, '2025-06-19 10:09:10', '2025-06-19 04:48:54'),
+(9, 'Miguel Santos', 'miguel@blockify.mx', 'Blockify', 'Blockchain Architect', 'Helped us scale our blockchain solution.', 'Highly skilled dev team.', 0, 3, '2025-06-19 10:09:10', '2025-06-19 04:48:54'),
+(10, 'Sophia Lee', 'sophia@greenglobe.org', 'GreenGlobe', 'Digital Strategist', 'Eco-friendly and efficient tech delivery.', 'Great collaboration.', 1, 2, '2025-06-19 10:09:10', '2025-06-19 04:48:54');
 
 -- --------------------------------------------------------
 
@@ -106,9 +142,9 @@ CREATE TABLE `homepagesections` (
 --
 
 INSERT INTO `homepagesections` (`id`, `section`, `content`, `created_at`, `updated_at`, `title`) VALUES
-(1, 'first', 'At WEBINARY, we are at the forefront of technological advancement, specializing in four key areas: Artificial Intelligence, Cloud Computing, Engineering Solutions, and Mobile Development. Our mission is to bring innovation to your fingertips, empowering your business to thrive in a rapidly evolving digital landscape.\n\nArtificial Intelligence (AI):\nHarness the power of AI to transform your operations. Our team of experts develops intelligent systems that enhance decision-making, automate processes, and provide deep insights through data analysis. From machine learning algorithms to natural language processing, we tailor AI solutions that meet your unique business needs.\n\nCloud Computing:\nEmbrace the future with our cloud computing services. We offer scalable and secure cloud solutions that enable you to store, manage, and analyze data efficiently. Whether you need public, private, or hybrid cloud services, our cloud experts ensure seamless integration and optimal performance, allowing you to focus on what matters most—growing your business.\n\nEngineering Solutions:\nOur engineering solutions are designed to solve complex challenges and drive innovation. We leverage cutting-edge technologies and methodologies to deliver high-quality products and services. From product design and development to system integration and testing, our engineering team is dedicated to providing solutions that are not only effective but also sustainable.\n\nMobile Development:\nIn today’s mobile-first world, having a robust mobile presence is essential. Our mobile development team creates user-friendly applications that engage your audience and enhance customer experience. We specialize in both iOS and Android platforms, ensuring that your app is optimized for performance and usability.\n\nAt [Your Company Name], we believe in collaboration and innovation. Our expert solutions are tailored to meet the specific needs of your business, ensuring that you stay ahead of the competition. Let us partner with you to explore new possibilities and drive your success in the digital age.', NULL, NULL, 'Welcome to WEBINARY'),
-(2, 'aboutus', ' At Webinary, we are passionate about shaping the\n                            future through technology. Our expertise spans\n                            across <strong>Artificial Intelligence</strong>,\n                            <strong>Cloud Computing</strong>,\n                            <strong>Engineering Solutions</strong>, and\n                            <strong>Mobile Development</strong>.<br /><br />\n                            We deliver cutting-edge solutions designed to\n                            transform businesses, empower innovation, and drive\n                            digital growth. Whether you\'re looking to harness\n                            the power of AI, build scalable cloud systems,\n                            engineer complex systems, or create powerful mobile\n                            experiences — we’ve got you covered. We deliver\n                            cutting-edge solutions designed to transform\n                            businesses, empower innovation, and drive digital\n                            growth. Whether you\'re looking to harness the power\n                            of AI, build scalable cloud systems, engineer\n                            complex systems, or create powerful mobile\n                            experiences — we’ve got you covered. We deliver\n                            cutting-edge solutions designed to transform\n                            businesses, empower innovation, and drive digital\n                            growth. Whether you\'re looking to harness the power\n                            of AI, build scalable cloud systems, engineer\n                            complex systems, or create powerful mobile\n                            experiences — we’ve got you covered. We deliver\n                            cutting-edge solutions designed to transform\n                            businesses, empower innovation, and drive digital\n                            growth. Whether you\'re looking to harness the power\n                            of AI, build scalable cloud systems, engineer\n                            complex systems, or create powerful mobile\n                            experiences — we’ve got you covered.', '2025-06-18 11:34:55', '2025-06-18 11:34:55', 'About Us'),
-(3, 'services', '<strong>OUR SERVICES</strong><br />\n                            At Webinary, we offer a range of cutting-edge\n                            technology solutions tailored to meet modern\n                            business needs. Our core services include:\n                            <br /><br />\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.\n                            Partner with Webinary to bring innovation,\n                            efficiency, and scalability to your digital journey.', '2025-06-18 11:37:19', '2025-06-18 11:37:19', 'Services');
+(1, 'first', 'At WEBINARY, we are at the forefront of technological advancement, specializing in four key areas: Artificial Intelligence, Cloud Computing, Engineering Solutions, and Mobile Development. Our mission is to bring innovation to your fingertips, empowering your business to thrive in a rapidly evolving digital landscape. Artificial Intelligence (AI): Harness the power of AI to transform your operations. Our team of experts develops intelligent systems that enhance decision-making, automate processes, and provide deep insights through data analysis. From machine learning algorithms to natural language processing, we tailor AI solutions that meet your unique business needs. Cloud Computing: Embrace the future with our cloud computing services. We offer scalable and secure cloud solutions that enable you to store, manage, and analyze data efficiently. Whether you need public, private, or hybrid cloud services, our cloud experts ensure seamless integration and optimal performance, allowing you to focus on what matters most—growing your business. Engineering Solutions: Our engineering solutions are designed to solve complex challenges and drive innovation. We leverage cutting-edge technologies and methodologies to deliver high-quality products and services. From product design and development to system integration and testing, our engineering team is dedicated to providing solutions that are not only effective but also sustainable. Mobile Development: In today’s mobile-first world, having a robust mobile presence is essential. Our mobile development team creates user-friendly applications that engage your audience and enhance customer experience. We specialize in both iOS and Android platforms, ensuring that your app is optimized for performance and usability. At [Your Company Name], we believe in collaboration and innovation. Our expert solutions are tailored to meet the specific needs of your business, ensuring that you stay ahead of the competition. Let us partner with you to explore new possibilities and drive your success in the digital age.', NULL, '2025-06-19 00:32:46', 'Welcome to WEBINARY'),
+(2, 'aboutus', 'At Webinary, we are passionate about shaping the future through technology. Our expertise spans across Artificial Intelligence, Cloud Computing, Engineering Solutions, and Mobile Development.\n\nWe deliver cutting-edge solutions designed to transform businesses, empower innovation, and drive digital growth. Whether you\'re looking to harness the power of AI, build scalable cloud systems, engineer complex systems, or create powerful mobile experiences — we’ve got you covered. We deliver cutting-edge solutions designed to transform businesses, empower innovation, and drive digital growth. Whether you\'re looking to harness the power of AI, build scalable cloud systems, engineer complex systems, or create powerful mobile experiences — we’ve got you covered. We deliver cutting-edge solutions designed to transform businesses, empower innovation, and drive digital growth. Whether you\'re looking to harness the power of AI, build scalable cloud systems, engineer complex systems, or create powerful mobile experiences — we’ve got you covered. We deliver cutting-edge solutions designed to transform businesses, empower innovation, and drive digital growth. Whether you\'re looking to harness the power of AI, build scalable cloud systems, engineer complex systems, or create powerful mobile experiences — we’ve got you covered.\n', '2025-06-18 11:34:55', '2025-06-18 11:34:55', 'About Us'),
+(3, 'services', 'At Webinary, we provide innovative and scalable technology solutions designed to meet the evolving needs of modern businesses. Our expertise spans artificial intelligence, cloud computing, engineering systems, and mobile application development. We help organizations harness the power of technology to drive efficiency, accelerate growth, and stay ahead of the curve. Whether you\'re building from the ground up or optimizing existing systems, Webinary is your trusted partner in delivering impactful digital transformation.\r\nAt Webinary, we provide innovative and scalable technology solutions designed to meet the evolving needs of modern businesses. Our expertise spans artificial intelligence, cloud computing, engineering systems, and mobile application development. We help organizations harness the power of technology to drive efficiency, accelerate growth, and stay ahead of the curve. Whether you\'re building from the ground up or optimizing existing systems, Webinary is your trusted partner in delivering impactful digital transformation.', '2025-06-18 11:37:19', '2025-06-19 00:51:31', 'Services');
 
 -- --------------------------------------------------------
 
@@ -191,7 +227,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2025_06_12_102404_create_reviews_table', 4),
 (7, '2025_06_16_054345_menu_options', 5),
 (8, '2025_06_16_063047_header_options', 6),
-(9, '2025_06_18_111450_create_homepagesections_table', 7);
+(9, '2025_06_18_111450_create_homepagesections_table', 7),
+(10, '2025_06_19_100641_create_clients_table', 8);
 
 -- --------------------------------------------------------
 
@@ -219,28 +256,29 @@ CREATE TABLE `projects` (
   `link` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `playstoreId` varchar(255) DEFAULT NULL
+  `playstoreId` varchar(255) DEFAULT NULL,
+  `homeview` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `projects`
 --
 
-INSERT INTO `projects` (`id`, `title`, `description`, `image`, `link`, `created_at`, `updated_at`, `playstoreId`) VALUES
-(1, 'E-commerce Platform', 'A full-stack web store with admin dashboard.', 'images/portfolio1.jpg', 'https://example.com/project1', '2025-06-12 09:46:54', '2025-06-12 09:46:54', NULL),
-(2, 'Mobile App UI', 'A modern app interface design.', 'images/portfolio2.jpg', 'https://example.com/project2', '2025-06-12 09:46:54', '2025-06-12 09:46:54', NULL),
-(3, 'E-commerce Platform', 'A full-stack web store with admin dashboard.', 'images/portfolio1.jpg', 'https://example.com/project1', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
-(4, 'Mobile App UI', 'A modern app interface design.', 'images/portfolio2.jpg', 'https://example.com/project2', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
-(5, 'Portfolio Website', 'A personal portfolio site built with HTML, CSS, and JavaScript.', 'images/portfolio3.jpg', 'https://example.com/project3', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
-(6, 'Blog System', 'A dynamic blog system with admin panel and user comments.', 'images/portfolio4.jpg', 'https://example.com/project4', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
-(7, 'Restaurant App', 'An ordering and reservation system for a restaurant.', 'images/portfolio5.jpg', 'https://example.com/project5', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
-(8, 'Task Management Tool', 'A project and task management app like Trello.', 'images/portfolio6.jpg', 'https://example.com/project6', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
-(9, 'Online Learning Platform', 'A course management system with video streaming.', 'images/portfolio7.jpg', 'https://example.com/project7', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
-(10, 'Weather Forecast App', 'A responsive app showing real-time weather updates.', 'images/portfolio8.jpg', 'https://example.com/project8', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
-(11, 'Finance Tracker', 'A budgeting app for personal expense tracking.', 'images/portfolio9.jpg', 'https://example.com/project9', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
-(12, 'Event Booking System', 'A complete system for managing and booking events.', 'images/portfolio10.jpg', 'https://example.com/project10', '2025-06-12 09:55:27', '2025-06-12 09:55:27', NULL),
-(13, 'doodhvale', 'This application is used for ordering milk and various daily essential. Payment is done through Paytm and HDFC payment gateways.', NULL, 'https://www.doodhvale.com/', NULL, NULL, 'com.technologies.subtlelabs.doodhvale'),
-(14, 'Kripalu Nidhi', 'Kripalu Nidhi application is developed for Jagatguru Kripalu Parishad where user and see Video and listen to Audio of jagatguru Kripalu Maharaj we have implemented Razorpay and PayPal payment gateway also we have implemented Exo player and YouTube player for playing video.', NULL, 'https://kripalunidhi.org/', NULL, NULL, 'com.kripalunidhi');
+INSERT INTO `projects` (`id`, `title`, `description`, `image`, `link`, `created_at`, `updated_at`, `playstoreId`, `homeview`) VALUES
+(1, 'E-commerce Platform', 'A full-stack web store with admin dashboard.', NULL, 'https://example.com/project1', '2025-06-12 09:46:54', '2025-06-19 05:34:06', NULL, 1),
+(2, 'Mobile App UI', 'A modern app interface design.', NULL, 'https://example.com/project2', '2025-06-12 09:46:54', '2025-06-19 05:34:06', NULL, 1),
+(3, 'E-commerce Platform', 'A full-stack web store with admin dashboard.', NULL, 'https://example.com/project1', '2025-06-12 09:55:27', '2025-06-19 05:34:06', NULL, 1),
+(4, 'Mobile App UI', 'A modern app interface design.', NULL, 'https://example.com/project2', '2025-06-12 09:55:27', '2025-06-19 05:34:06', NULL, 1),
+(5, 'Portfolio Website', 'A personal portfolio site built with HTML, CSS, and JavaScript.', NULL, 'https://example.com/project3', '2025-06-12 09:55:27', '2025-06-19 05:34:06', NULL, 0),
+(6, 'Blog System', 'A dynamic blog system with admin panel and user comments.', NULL, 'https://example.com/project4', '2025-06-12 09:55:27', '2025-06-19 05:34:06', NULL, 0),
+(7, 'Restaurant App', 'An ordering and reservation system for a restaurant.', NULL, 'https://example.com/project5', '2025-06-12 09:55:27', '2025-06-19 05:34:06', NULL, 0),
+(8, 'Task Management Tool', 'A project and task management app like Trello.', NULL, 'https://example.com/project6', '2025-06-12 09:55:27', '2025-06-19 05:34:06', NULL, 1),
+(9, 'Online Learning Platform', 'A course management system with video streaming.', NULL, 'https://example.com/project7', '2025-06-12 09:55:27', '2025-06-19 05:34:06', NULL, 0),
+(10, 'Weather Forecast App', 'A responsive app showing real-time weather updates.', NULL, 'https://example.com/project8', '2025-06-12 09:55:27', '2025-06-19 05:34:06', NULL, 0),
+(11, 'Finance Tracker', 'A budgeting app for personal expense tracking.', NULL, 'https://example.com/project9', '2025-06-12 09:55:27', '2025-06-19 05:34:06', NULL, 0),
+(12, 'Event Booking System', 'A complete system for managing and booking events.', NULL, 'https://example.com/project10', '2025-06-12 09:55:27', '2025-06-19 05:34:06', NULL, 0),
+(13, 'doodhvale', 'This application is used for ordering milk and various daily essential. Payment is done through Paytm and HDFC payment gateways.', NULL, 'https://www.doodhvale.com/', NULL, '2025-06-19 05:34:06', 'com.technologies.subtlelabs.doodhvale', 0),
+(14, 'Kripalu Nidhi', 'Kripalu Nidhi application is developed for Jagatguru Kripalu Parishad where user and see Video and listen to Audio of jagatguru Kripalu Maharaj we have implemented Razorpay and PayPal payment gateway also we have implemented Exo player and YouTube player for playing video.', NULL, 'https://kripalunidhi.org/', NULL, '2025-06-19 05:34:06', 'com.kripalunidhi', 0);
 
 -- --------------------------------------------------------
 
@@ -254,24 +292,25 @@ CREATE TABLE `reviews` (
   `designation` varchar(255) DEFAULT NULL,
   `comment` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `homeview` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `reviews`
 --
 
-INSERT INTO `reviews` (`id`, `client_name`, `designation`, `comment`, `created_at`, `updated_at`) VALUES
-(1, 'John Doe', 'CEO, TechNova', 'Webinary transformed our digital presence beyond expectations!', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
-(2, 'Jane Smith', 'CTO, InnovateX', 'Highly professional team with innovative solutions.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
-(3, 'Alice Johnson', 'Marketing Lead, SkyReach', 'They helped us scale our marketing automation efficiently.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
-(4, 'Robert Brown', 'Founder, CodeGrid', 'Great experience working with Webinary – would definitely recommend.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
-(5, 'Emily Davis', 'Product Manager, NextGenApps', 'Our product launch went flawlessly thanks to their tech expertise.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
-(6, 'Michael Lee', 'Operations Head, Finverse', 'Reliable, smart, and always on time. Fantastic service.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
-(7, 'Sarah Wilson', 'UX Designer, PixelWave', 'The UI/UX support was top-notch and aligned with our goals.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
-(8, 'David Clark', 'Manager, CloudSphere', 'They delivered exactly what we envisioned for our cloud migration.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
-(9, 'Laura Hall', 'Engineer, FutureTech', 'Always proactive, responsive, and knowledgeable. Highly satisfied.', '2025-06-12 10:27:25', '2025-06-12 10:27:25'),
-(10, 'Daniel Lewis', 'Director, GreenStack', 'The best tech partner we’ve worked with in the last 5 years.', '2025-06-12 10:27:25', '2025-06-12 10:27:25');
+INSERT INTO `reviews` (`id`, `client_name`, `designation`, `comment`, `created_at`, `updated_at`, `homeview`) VALUES
+(1, 'John Doe', 'CEO, TechNova', 'Webinary transformed our digital presence beyond expectations!', '2025-06-12 10:27:25', '2025-06-19 04:46:38', 1),
+(2, 'Jane Smith', 'CTO, InnovateX', 'Highly professional team with innovative solutions.', '2025-06-12 10:27:25', '2025-06-19 04:46:38', 1),
+(3, 'Alice Johnson', 'Marketing Lead, SkyReach', 'They helped us scale our marketing automation efficiently.', '2025-06-12 10:27:25', '2025-06-19 04:46:38', 0),
+(4, 'Robert Brown', 'Founder, CodeGrid', 'Great experience working with Webinary – would definitely recommend.', '2025-06-12 10:27:25', '2025-06-19 04:46:38', 0),
+(5, 'Emily Davis', 'Product Manager, NextGenApps', 'Our product launch went flawlessly thanks to their tech expertise.', '2025-06-12 10:27:25', '2025-06-19 04:46:38', 0),
+(6, 'Michael Lee', 'Operations Head, Finverse', 'Reliable, smart, and always on time. Fantastic service.', '2025-06-12 10:27:25', '2025-06-19 04:46:38', 0),
+(7, 'Sarah Wilson', 'UX Designer, PixelWave', 'The UI/UX support was top-notch and aligned with our goals.', '2025-06-12 10:27:25', '2025-06-19 04:46:38', 1),
+(8, 'David Clark', 'Manager, CloudSphere', 'They delivered exactly what we envisioned for our cloud migration.', '2025-06-12 10:27:25', '2025-06-19 04:46:38', 1),
+(9, 'Laura Hall', 'Engineer, FutureTech', 'Always proactive, responsive, and knowledgeable. Highly satisfied.', '2025-06-12 10:27:25', '2025-06-19 04:46:38', 0),
+(10, 'Daniel Lewis', 'Director, GreenStack', 'The best tech partner we’ve worked with in the last 5 years.', '2025-06-12 10:27:25', '2025-06-19 04:46:38', 0);
 
 -- --------------------------------------------------------
 
@@ -292,21 +331,14 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `service_name`, `service_content`, `service_list`, `created_at`) VALUES
-(1, 'Website Design Development', 'Explore our comprehensive range of website development services, covering everything from initial consultation to final delivery and ongoing maintenance.', 'eCommerce Website Development,Content Management System Development,Mobile Website Development,Search Engine Optimization,Front-end Development,Back-end Development,Enterprise Website Applications', 20250611),
-(2, 'Custom SoftwareDevelopment', 'Address intricate business obstacles with our adept team of software engineers and architects. We stand at the forefront as a premier software engineering firm, harnessing cutting-edge technologies to deliver innovative, agile, and accurate solutions.', 'Software Consulting,Web App Development,Mobile App Development,Software QA and Testing,DevOps,Software Modernization,Software Product Development,Digital Transformation', 20250611),
-(3, 'Product Engineering', 'Opting for Subtlelabs as your software product development partner ensures access to advanced digital strategies and solutions crafted by seasoned software product developers. Our expertise empowers numerous global enterprises to deliver significant value to their end-users.', 'Product Testing,DevOps,API Development,Compliance Management,Support and Maintenance', 20250611),
+(1, 'Website Design Development', 'Explore our comprehensive range of website development services, covering everything from initial consultation to final delivery and ongoing maintenance.', 'eCommerce Website Development,Content Management System Development,Mobile Website Development,Search Engine Optimization,Front-end Development,Back-end Development,Enterprise Website Application,this also', 20250611),
+(2, 'Custom SoftwareDevelopment', 'Address intricate business obstacles with our adept team of software engineers and architects. We stand at the forefront as a premier software engineering firm, harnessing cutting-edge technologies to deliver innovative, agile, and accurate solutions.', 'Software Consulting,Web App Development,Mobile App Development,Software QA and Testing,DevOps,Software Modernization', 20250611),
 (4, 'Mobile App Development', 'We create fast, reliable, and user-friendly mobile applications for iOS and Android platforms.', 'iOS Development, Android Development, Flutter Apps, Cross-Platform Solutions', 2025),
 (5, 'Cloud Solutions', 'Scalable and secure cloud infrastructure setup, deployment, and management for businesses.', 'AWS, Azure, Google Cloud, DevOps Automation, Cloud Migration', 2025),
 (6, 'AI & Machine Learning', 'Build intelligent systems using AI and ML to automate tasks and gain insights from data.', 'Predictive Analytics, NLP, Chatbots, Data Mining, Model Training', 2025),
 (7, 'Software Consulting', 'Expert software consulting services to streamline your tech stack and development process.', 'Technical Strategy, Architecture Review, Code Audits, Project Planning', 2025),
-(8, 'Digital Marketing', 'Boost your online presence and drive targeted traffic with our digital marketing solutions.', 'SEO, SEM, Social Media Marketing, Email Campaigns, Content Marketing', 2025),
 (9, 'UI/UX Design', 'Create stunning, user-centered interfaces with our expert UI/UX design services.', 'Wireframing, Prototyping, User Research, Mobile Design, Web App Design', 2025),
-(10, 'IT Infrastructure Management', 'Reliable infrastructure management services to ensure performance and security.', 'Network Setup, Server Monitoring, Security Audits, Backup Solutions', 2025),
-(11, 'Cybersecurity Services', 'Protect your systems and data with our advanced cybersecurity services.', 'Penetration Testing, Risk Assessment, Firewall Configuration, SOC Services', 2025),
-(12, 'Enterprise Software Development', 'Custom enterprise-level applications built for scalability and performance.', 'ERP Solutions, CRM Systems, Workflow Automation, Business Intelligence', 2025),
-(13, 'DevOps Services', 'Accelerate your software delivery pipeline through DevOps best practices.', 'CI/CD Pipelines, Containerization, Kubernetes, Infrastructure as Code', 2025),
-(14, 'Blockchain Solutions', 'Leverage blockchain technology for secure and transparent digital transactions.', 'Smart Contracts, DApps, Cryptocurrency Wallets, Hyperledger Development', 2025),
-(15, 'Data Analytics & BI', 'Unlock insights and make informed decisions with our data analytics services.', 'Data Warehousing, Reporting Dashboards, ETL, Power BI, Tableau', 2025);
+(10, 'IT Infrastructure Management', 'Reliable infrastructure management services to ensure performance and security.', 'Network Setup, Server Monitoring, Security Audits, Backup Solutions', 2025);
 
 -- --------------------------------------------------------
 
@@ -363,6 +395,13 @@ ALTER TABLE `cache`
 --
 ALTER TABLE `cache_locks`
   ADD PRIMARY KEY (`key`);
+
+--
+-- Indexes for table `clients`
+--
+ALTER TABLE `clients`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `clients_project_id_foreign` (`project_id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -453,6 +492,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `clients`
+--
+ALTER TABLE `clients`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -486,7 +531,7 @@ ALTER TABLE `menu_options`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `projects`
@@ -511,6 +556,16 @@ ALTER TABLE `services`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `clients`
+--
+ALTER TABLE `clients`
+  ADD CONSTRAINT `clients_project_id_foreign` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
